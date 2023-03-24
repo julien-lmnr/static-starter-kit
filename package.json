@@ -1,0 +1,17 @@
+{
+  "name": "static-starter-kit",
+  "version": "1.0.0",
+  "description": "Boilerplate for building static websites with Parcel, Twig, and Stimulus.",
+  "repository": "git@github.com:julien-lmnr/static-starter-kit.git",
+  "author": "labfordev <labfordev@gmail.com>",
+  "license": "MIT",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel src/**/*.html",
+    "build": "parcel build src/**/*.html"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.8.3",
+    "parcel": "^2.8.3"
+  }
+}
