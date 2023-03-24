@@ -7,8 +7,8 @@
   "license": "MIT",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "parcel src/*.html.twig",
-    "build": "parcel build src/*.html.twig"
+    "start": "parcel src/*.twig",
+    "build": "parcel build src/*.twig"
   },
   "devDependencies": {
     "@parcel/plugin": "^2.8.3",
