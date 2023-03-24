@@ -7,11 +7,15 @@
   "license": "MIT",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "parcel src/**/*.html",
-    "build": "parcel build src/**/*.html"
+    "start": "parcel src/*.html.twig",
+    "build": "parcel build src/*.html.twig"
   },
   "devDependencies": {
+    "@parcel/plugin": "^2.8.3",
     "@parcel/transformer-sass": "2.8.3",
-    "parcel": "^2.8.3"
+    "glob": "^9.3.2",
+    "parcel": "^2.8.3",
+    "parcel-transformer-twig": "link:./parcel/parcel-transformer-twig",
+    "twig": "^1.16.0"
   }
 }
