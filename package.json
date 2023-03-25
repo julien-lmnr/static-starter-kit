@@ -9,7 +9,7 @@
   "scripts": {
     "start": "parcel src/*.twig",
     "build": "parcel build src/*.twig",
-    "lint:scss": "stylelint \"assets/scss/**/*.scss\"",
+    "lint:style": "stylelint \"assets/scss/**/*.scss\"",
     "lint:js": "eslint \"assets/js/**/*.js\""
   },
   "devDependencies": {
