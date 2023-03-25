@@ -1,0 +1,30 @@
+{
+  "name": "static-starter-kit",
+  "version": "1.0.0",
+  "description": "Boilerplate for building static websites with Parcel, Twig, and Stimulus.",
+  "repository": "git@github.com:julien-lmnr/static-starter-kit.git",
+  "author": "labfordev <labfordev@gmail.com>",
+  "license": "MIT",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel src/*.twig",
+    "build": "parcel build src/*.twig",
+    "lint:style": "stylelint \"assets/scss/**/*.scss\"",
+    "lint:js": "eslint \"assets/js/**/*.js\""
+  },
+  "devDependencies": {
+    "@hotwired/stimulus": "^3.2.1",
+    "@parcel/plugin": "^2.8.3",
+    "@parcel/transformer-sass": "2.8.3",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.36.0",
+    "glob": "^9.3.2",
+    "parcel": "^2.8.3",
+    "parcel-transformer-twig": "link:./parcel/parcel-transformer-twig",
+    "postcss": "^8.1.0",
+    "stylelint": "^15.3.0",
+    "stylelint-config-standard-scss": "^7.0.1",
+    "stylelint-scss": "^4.5.0",
+    "twig": "^1.16.0"
+  }
+}

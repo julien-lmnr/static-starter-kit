@@ -1,0 +1,8 @@
+{
+  "name": "parcel-transformer-twig",
+  "version": "1.0.0",
+  "main": "twig-transformer.js",
+  "engines": {
+    "parcel": "^2.8.3"
+  }
+}

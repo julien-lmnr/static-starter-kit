@@ -1,0 +1,10 @@
+# PHPStorm
+/.idea
+
+# Yarn/NPM
+/node_modules
+yarn-error.log
+
+# Parcel
+/.parcel-cache
+/dist
