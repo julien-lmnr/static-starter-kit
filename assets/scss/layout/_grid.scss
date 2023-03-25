@@ -1,5 +1,5 @@
 /**
- * Exemple d'utilisation :
+ * Example of use :
  *
  * <div class="grid">
  *   <div class="grid__item grid__col-6-lg">...</div>
@@ -8,11 +8,11 @@
  */
 
 /**
- * Génère des classes .grid__col-{nombre} pour chaque colonne dans une grille,
- * en utilisant un préfixe optionnel pour les grilles imbriquées.
+ * Generates .grid__col-{number} classes for each column in a grid,
+ * using an optional prefix for nested grids.
  *
- * @param {String} $prefix - Préfixe optionnel pour les grilles imbriquées
- * @param {Number} $columns - Nombre de colonnes de la grille
+ * @param {String} $prefix - Optional prefix for nested grids
+ * @param {Number} $columns - Number of grid columns
  */
 @mixin grid-columns($prefix: "", $columns: 12) {
   @for $i from 1 through $columns {
@@ -34,7 +34,7 @@
 }
 
 /**
- * Boucle à travers les breakpoints pour générer des grilles imbriquées.
+ * Loop through breakpoints to generate nested grids.
  */
 @each $breakpoint in map-keys($breakpoints) {
   $infix: breakpoint-infix($breakpoint, $breakpoints);

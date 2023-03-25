@@ -36,10 +36,10 @@
 }
 
 /**
- * Get the minimum width of a breakpoint. Returns null for the smallest (first) breakpoint.
+ * Get the minimum width of a breakpoint.
  *
  * @param {String} $name - Breakpoint name
- * @param {Map} $breakpoints - List of breakpoints (by default, the global variable $breakpoints)
+ * @param {Map} $breakpoints - List of breakpoints
  *
  * @return {Number|Null} - Minimum breakpoint width or null for smallest breakpoint
  */
@@ -50,24 +50,26 @@
 }
 
 /**
- * Return an empty string if it's the smallest breakpoint, otherwise return the name with a dash in front.
- * Useful for creating responsive utilities.
- *
- * @param {String} $name - Breakpoint name
- * @param {Map} $breakpoints - List of breakpoints (by default the global variable $breakpoints)
- *
- * @return {String} - Empty string for the smallest breakpoint, otherwise the name with a dash in front
- */
+  * Generate suffix for class name based on breakpoint.
+  *
+  * If the breakpoint is the smallest (null), returns an empty string.
+  * Otherwise, returns a suffix with a hyphen followed by the name of the breakpoint.
+  *
+  * @param {String} $name - Breakpoint name
+  * @param {Map} $breakpoints - List of breakpoints
+  *
+  * @return {String} - Class name suffix for the given breakpoint
+  */
 @function breakpoint-infix($name, $breakpoints: $breakpoints) {
   @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
 }
 
 /**
- * Converted a hexadecimal color to rgb.
+ * Converted a hexadecimal color to RGB.
  *
  * @param {String} $hex - Hex color (SCSS variable only)
  *
- * @return {String} - Color in rgb notation
+ * @return {String} - Color in RGB notation
  */
 @function hex-to-rgb($hex) {
   @return red($hex) green($hex) blue($hex);
