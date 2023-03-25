@@ -46,9 +46,6 @@ $breakpoints: (
   xxl: 1536px,
 ) !default;
 
-/* Layout */
-$header-height: 6.4rem !default;
-
 /* Spacings */
 $spacing-multiplier: 8 !default; // Multiplier for spacing (in pixels)
 $conversion-divisor-rem: 10 !default; // Divisor for conversion to rem (10 if html { font-size: 62.5% })
