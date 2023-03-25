@@ -1,0 +1,74 @@
+@use "sass:string";
+@use "sass:map";
+
+/**
+ * Replaces all occurrences of a character string with another string.
+ *
+ * @param {String} $subject - Source string
+ * @param {String} $search - String to search
+ * @param {String} $replace - String that will replace $search
+ *
+ * @return {String} - String with replaced occurrences
+ */
+@function string-replace($subject, $search, $replace: "") {
+  $index: string.index($subject, $search);
+
+  @if $index {
+    @return string.slice($subject, 1, $index - 1) + $replace + string-replace(
+      string.slice($subject, $index + string.length($search)
+    ), $search, $replace);
+  }
+
+  @return $subject;
+}
+
+/**
+ * Constructs a spacing (in rem) based on a multiplier.
+ *
+ * @param {Number} $multiplicand - Number to multiply by the spacing factor
+ *
+ * @return {String} - Calculated spacing in rem
+ */
+@function space($multiplicand) {
+  $space: calc($multiplicand * $spacing-multiplier / $conversion-divisor-rem);
+
+  @return #{$space}rem;
+}
+
+/**
+ * Get the minimum width of a breakpoint. Returns null for the smallest (first) breakpoint.
+ *
+ * @param {String} $name - Breakpoint name
+ * @param {Map} $breakpoints - List of breakpoints (by default, the global variable $breakpoints)
+ *
+ * @return {Number|Null} - Minimum breakpoint width or null for smallest breakpoint
+ */
+@function breakpoint-min($name, $breakpoints: $breakpoints) {
+  $min: map.get($breakpoints, $name);
+
+  @return if($min != 0, $min, null);
+}
+
+/**
+ * Return an empty string if it's the smallest breakpoint, otherwise return the name with a dash in front.
+ * Useful for creating responsive utilities.
+ *
+ * @param {String} $name - Breakpoint name
+ * @param {Map} $breakpoints - List of breakpoints (by default the global variable $breakpoints)
+ *
+ * @return {String} - Empty string for the smallest breakpoint, otherwise the name with a dash in front
+ */
+@function breakpoint-infix($name, $breakpoints: $breakpoints) {
+  @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+}
+
+/**
+ * Converted a hexadecimal color to rgb.
+ *
+ * @param {String} $hex - Hex color (SCSS variable only)
+ *
+ * @return {String} - Color in rgb notation
+ */
+@function hex-to-rgb($hex) {
+  @return red($hex) green($hex) blue($hex);
+}

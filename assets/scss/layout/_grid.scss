@@ -1,0 +1,46 @@
+/**
+ * Exemple d'utilisation :
+ *
+ * <div class="grid">
+ *   <div class="grid__item grid__col-6-lg">...</div>
+ *   <div class="grid__item grid__col-6-lg">...</div>
+ * </div>
+ */
+
+/**
+ * Génère des classes .grid__col-{nombre} pour chaque colonne dans une grille,
+ * en utilisant un préfixe optionnel pour les grilles imbriquées.
+ *
+ * @param {String} $prefix - Préfixe optionnel pour les grilles imbriquées
+ * @param {Number} $columns - Nombre de colonnes de la grille
+ */
+@mixin grid-columns($prefix: "", $columns: 12) {
+  @for $i from 1 through $columns {
+    .grid__item.grid__col-#{$i}#{$prefix} {
+      grid-column: span $i;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template: auto / repeat(12, 1fr);
+  grid-gap: space(3);
+  width: 100%;
+}
+
+.grid__item {
+  grid-column: span 12;
+}
+
+/**
+ * Boucle à travers les breakpoints pour générer des grilles imbriquées.
+ */
+@each $breakpoint in map-keys($breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $breakpoints);
+  $postfix: if($infix != "", $infix, "");
+
+  @include breakpoint($breakpoint) {
+    @include grid-columns($postfix);
+  }
+}

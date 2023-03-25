@@ -1,5 +1,11 @@
 {% extends 'layout/base.html.twig' %}
 
 {% block main %}
-    <h1>Hello World!</h1>
+    <div class="demo" data-controller="hello">
+        <svg class="icon icon-hand demo__icon">
+            <use xlink:href="../assets/images/icons.svg#hand"></use>
+        </svg>
+
+        <h1 class="demo__title">Static Starter Kit</h1>
+    </div>
 {% endblock %}

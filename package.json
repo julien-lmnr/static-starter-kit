@@ -9,8 +9,8 @@
   "scripts": {
     "start": "parcel src/*.twig",
     "build": "parcel build src/*.twig",
-    "lint:scss": "stylelint \"assets/**/*.scss\"",
-    "lint:js": "eslint \"assets/**/*.js\""
+    "lint:scss": "stylelint \"assets/scss/**/*.scss\"",
+    "lint:js": "eslint \"assets/js/**/*.js\""
   },
   "devDependencies": {
     "@hotwired/stimulus": "^3.2.1",
@@ -23,7 +23,7 @@
     "parcel-transformer-twig": "link:./parcel/parcel-transformer-twig",
     "postcss": "^8.1.0",
     "stylelint": "^15.3.0",
-    "stylelint-config-recommended-scss": "^9.0.1",
+    "stylelint-config-standard-scss": "^7.0.1",
     "stylelint-scss": "^4.5.0",
     "twig": "^1.16.0"
   }
