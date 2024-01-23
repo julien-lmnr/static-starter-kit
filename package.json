@@ -5,7 +5,10 @@
   "repository": "git@github.com:julien-lmnr/static-starter-kit.git",
   "author": "labfordev <labfordev@gmail.com>",
   "license": "MIT",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "engines": {
+    "yarn": ">=4"
+  },
+  "browserslist": ["> 0.5%", "last 2 versions", "not dead"],
   "scripts": {
     "start": "parcel src/*.twig",
     "build": "parcel build src/*.twig",

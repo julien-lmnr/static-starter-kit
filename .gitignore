@@ -4,6 +4,7 @@
 # Yarn/NPM
 /node_modules
 yarn-error.log
+/.yarn
 
 # Parcel
 /.parcel-cache
