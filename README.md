@@ -8,6 +8,7 @@ yarn build # run parcel for prod
 
 yarn lint:style # run stylelint
 yarn lint:js    # run eslint
+yarn format     # run prettier
 ```
 
 ### Documentation
