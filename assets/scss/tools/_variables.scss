@@ -8,42 +8,44 @@ $color-text: #2e2c34 !default;
 $color-background: #fff !default;
 
 /* Typography */
-$font-family-text: "Manrope", sans-serif !default;
+$font-family-text: 'Manrope', sans-serif !default;
 $font-size-text: 16px !default;
 $font-weight-text: 400 !default;
 $font-line-height-text: 1.5 !default;
 
 $font-sizes-title: (
-  h1: (
-    base: 2.4rem, // Base font size for h1 in rem
-    md: 3.2rem,   // Font size for h1 from md breakpoint in rem
-  ),
-  h2: (
-    base: 2rem,
-    md: 2.8rem,
-  ),
-  h3: (
-    base: 1.6rem,
-    md: 2rem,
-  ),
-  h4: (
-    base: 1.6rem,
-  ),
-  h5: (
-    base: 1.6rem,
-  ),
-  h6: (
-    base: 1.6rem,
-  )
+    h1: (
+        base: 2.4rem,
+        // Base font size for h1 in rem
+        md: 3.2rem,
+        // Font size for h1 from md breakpoint in rem
+    ),
+    h2: (
+        base: 2rem,
+        md: 2.8rem
+    ),
+    h3: (
+        base: 1.6rem,
+        md: 2rem
+    ),
+    h4: (
+        base: 1.6rem
+    ),
+    h5: (
+        base: 1.6rem
+    ),
+    h6: (
+        base: 1.6rem
+    )
 ) !default;
 
 /* Breakpoints */
 $breakpoints: (
-  sm: 640px,
-  md: 768px,
-  lg: 1024px,
-  xl: 1280px,
-  xxl: 1536px,
+    sm: 640px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1280px,
+    xxl: 1536px
 ) !default;
 
 /* Spacings */

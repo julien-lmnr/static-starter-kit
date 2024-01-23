@@ -1,4 +1,4 @@
-@use "sass:string";
+@use 'sass:string';
 
 /*
  * Example of use:
@@ -8,37 +8,53 @@
  * <div class="mr-3-lg"></div>
  * <div class="pl-3-lg"></div>
  */
-@mixin spacing-classes($sides: (top, right, bottom, left), $sizes: (0, 1, 2, 3, 4, 5), $breakpoints) {
-  @each $side in $sides {
-    $abbreviation: string.slice($side, 1, 1);
+@mixin spacing-classes(
+    $sides: (
+        top,
+        right,
+        bottom,
+        left
+    ),
+    $sizes: (
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+    ),
+    $breakpoints
+) {
+    @each $side in $sides {
+        $abbreviation: string.slice($side, 1, 1);
 
-    @each $size in $sizes {
-      .m#{$abbreviation}-#{$size} {
-        margin-#{$side}: space($size);
-      }
-
-      .p#{$abbreviation}-#{$size} {
-        padding-#{$side}: space($size);
-      }
-    }
-
-    @each $breakpoint in map-keys($breakpoints) {
-      $infix: breakpoint-infix($breakpoint, $breakpoints);
-      $postfix: if($infix != "", $infix, "");
-
-      @include breakpoint($breakpoint) {
         @each $size in $sizes {
-          .m#{$abbreviation}-#{$size}#{$postfix} {
-            margin-#{$side}: space($size);
-          }
+            .m#{$abbreviation}-#{$size} {
+                margin-#{$side}: space($size);
+            }
 
-          .p#{$abbreviation}-#{$size}#{$postfix} {
-            padding-#{$side}: space($size);
-          }
+            .p#{$abbreviation}-#{$size} {
+                padding-#{$side}: space($size);
+            }
         }
-      }
+
+        @each $breakpoint in map-keys($breakpoints) {
+            $infix: breakpoint-infix($breakpoint, $breakpoints);
+            $postfix: if($infix != '', $infix, '');
+
+            @include breakpoint($breakpoint) {
+                @each $size in $sizes {
+                    .m#{$abbreviation}-#{$size}#{$postfix} {
+                        margin-#{$side}: space($size);
+                    }
+
+                    .p#{$abbreviation}-#{$size}#{$postfix} {
+                        padding-#{$side}: space($size);
+                    }
+                }
+            }
+        }
     }
-  }
 }
 
 @include spacing-classes($breakpoints: $breakpoints);

@@ -14,33 +14,33 @@
  * @param {String} $prefix - Optional prefix for nested grids
  * @param {Number} $columns - Number of grid columns
  */
-@mixin grid-columns($prefix: "", $columns: 12) {
-  @for $i from 1 through $columns {
-    .grid__item.grid__col-#{$i}#{$prefix} {
-      grid-column: span $i;
+@mixin grid-columns($prefix: '', $columns: 12) {
+    @for $i from 1 through $columns {
+        .grid__item.grid__col-#{$i}#{$prefix} {
+            grid-column: span $i;
+        }
     }
-  }
 }
 
 .grid {
-  display: grid;
-  grid-template: auto / repeat(12, 1fr);
-  grid-gap: space(3);
-  width: 100%;
+    display: grid;
+    grid-template: auto / repeat(12, 1fr);
+    grid-gap: space(3);
+    width: 100%;
 }
 
 .grid__item {
-  grid-column: span 12;
+    grid-column: span 12;
 }
 
 /**
  * Loop through breakpoints to generate nested grids.
  */
 @each $breakpoint in map-keys($breakpoints) {
-  $infix: breakpoint-infix($breakpoint, $breakpoints);
-  $postfix: if($infix != "", $infix, "");
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+    $postfix: if($infix != '', $infix, '');
 
-  @include breakpoint($breakpoint) {
-    @include grid-columns($postfix);
-  }
+    @include breakpoint($breakpoint) {
+        @include grid-columns($postfix);
+    }
 }

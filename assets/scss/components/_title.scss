@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 
 /**
  * Set title sizes based on breakpoints.
@@ -7,17 +7,17 @@
  * @param {Map} $sizes - The size map for the title and its breakpoints
  */
 @mixin title-size($size, $sizes) {
-  #{$size} {
-    font-size: map.get($sizes, base);
+    #{$size} {
+        font-size: map.get($sizes, base);
 
-    @each $breakpoint in map-keys($breakpoints) {
-        @include breakpoint($breakpoint) {
-            font-size: map.get($sizes, $breakpoint);
+        @each $breakpoint in map-keys($breakpoints) {
+            @include breakpoint($breakpoint) {
+                font-size: map.get($sizes, $breakpoint);
+            }
         }
     }
-  }
 }
 
 @each $size, $value in $font-sizes-title {
-  @include title-size($size, $value);
+    @include title-size($size, $value);
 }

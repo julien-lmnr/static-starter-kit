@@ -1,6 +1,6 @@
 // Thanks to: https://github.com/bingumd/parcel-transformer-twig
 const { Transformer } = require('@parcel/plugin');
-const glob = require('glob');
+const { glob } = require('glob');
 const Twig = require('twig');
 
 module.exports = new Transformer({

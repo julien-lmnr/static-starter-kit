@@ -13,21 +13,23 @@
     "start": "parcel src/*.twig",
     "build": "parcel build src/*.twig",
     "lint:style": "stylelint \"assets/scss/**/*.scss\"",
-    "lint:js": "eslint \"assets/js/**/*.js\""
+    "lint:js": "eslint \"assets/js/**/*.js\"",
+    "format": "prettier --write assets/"
   },
   "devDependencies": {
-    "@hotwired/stimulus": "^3.2.1",
-    "@parcel/plugin": "^2.8.3",
-    "@parcel/transformer-sass": "2.8.3",
-    "autoprefixer": "^10.4.14",
-    "eslint": "^8.36.0",
-    "glob": "^9.3.2",
-    "parcel": "^2.8.3",
+    "@hotwired/stimulus": "^3.2.2",
+    "@parcel/plugin": "^2.11.0",
+    "@parcel/transformer-sass": "^2.11.0",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
+    "glob": "^10.3.10",
+    "parcel": "^2.11.0",
     "parcel-transformer-twig": "link:./parcel/parcel-transformer-twig",
-    "postcss": "^8.1.0",
-    "stylelint": "^15.3.0",
-    "stylelint-config-standard-scss": "^7.0.1",
-    "stylelint-scss": "^4.5.0",
-    "twig": "^1.16.0"
+    "postcss": "^8.4.33",
+    "prettier": "^3.2.4",
+    "stylelint": "^16.2.0",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "stylelint-scss": "^6.1.0",
+    "twig": "^1.17.1"
   }
 }
