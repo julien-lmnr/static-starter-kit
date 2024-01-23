@@ -1,6 +1,6 @@
-@use "sass:string";
-@use "sass:map";
-@use "sass:list";
+@use 'sass:string';
+@use 'sass:map';
+@use 'sass:list';
 
 /**
  * Generate a custom @font-face rule.
@@ -16,48 +16,54 @@
  * @include font-face("Manrope", "../fonts/Manrope", 400 500 600 700, null, woff2)
  */
 @mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
-  $src: null;
-  $extmods: (eot: "?", svg: "#" + string-replace($name, " ", "_")); // Prefixes and suffixes for certain extensions
-  $formats: (otf: "opentype", ttf: "truetype"); // Formats for some extensions
+    $src: null;
+    $extmods: (
+        eot: '?',
+        svg: '#' + string-replace($name, ' ', '_')
+    ); // Prefixes and suffixes for certain extensions
+    $formats: (
+        otf: 'opentype',
+        ttf: 'truetype'
+    ); // Formats for some extensions
 
-  // Generate the sources for each extension
-  @each $ext in $exts {
-    $extmod: if(map.has-key($extmods, $ext), $ext + map.get($extmods, $ext), $ext);
-    $format: if(map.has-key($formats, $ext), map.get($formats, $ext), $ext);
-    $url: string.quote($path + "." + $extmod);
-    $src: list.append($src, url($url) format(string.quote($format)), comma);
-  }
-
-  // Generate the @font-face rule
-  @if length($weight) == 1 {
-    @font-face {
-      font-family: string.quote($name);
-      font-style: $style;
-      font-weight: $weight;
-      font-display: swap;
-      src: $src;
+    // Generate the sources for each extension
+    @each $ext in $exts {
+        $extmod: if(map.has-key($extmods, $ext), $ext + map.get($extmods, $ext), $ext);
+        $format: if(map.has-key($formats, $ext), map.get($formats, $ext), $ext);
+        $url: string.quote($path + '.' + $extmod);
+        $src: list.append($src, url($url) format(string.quote($format)), comma);
     }
-  } @else {
-    $weights: $weight;
 
-    // Generate @font-face rule for each weight
-    @each $weight in $weights {
-      $suffix: map.get(
-        (
-          200: extralight,
-          300: light,
-          400: regular,
-          500: medium,
-          600: semibold,
-          700: bold,
-          900: black
-        ),
-        $weight
-      );
+    // Generate the @font-face rule
+    @if length($weight) == 1 {
+        @font-face {
+            font-family: string.quote($name);
+            font-style: $style;
+            font-weight: $weight;
+            font-display: swap;
+            src: $src;
+        }
+    } @else {
+        $weights: $weight;
 
-      @include font-face($name, $path + "-" + $suffix, $weight, $style, $exts);
+        // Generate @font-face rule for each weight
+        @each $weight in $weights {
+            $suffix: map.get(
+                (
+                    200: extralight,
+                    300: light,
+                    400: regular,
+                    500: medium,
+                    600: semibold,
+                    700: bold,
+                    900: black
+                ),
+                $weight
+            );
+
+            @include font-face($name, $path + '-' + $suffix, $weight, $style, $exts);
+        }
     }
-  }
 }
 
 /**
@@ -96,35 +102,35 @@
  * Generates => @media (max-height: 300px) { ... }
  */
 @mixin breakpoint($breakpoint, $direction: min) {
-  @if map.has-key($breakpoints, $breakpoint) {
-    $breakpoint-value: map.get($breakpoints, $breakpoint);
+    @if map.has-key($breakpoints, $breakpoint) {
+        $breakpoint-value: map.get($breakpoints, $breakpoint);
 
-    @if $direction == max {
-      @media (max-width: ($breakpoint-value - 1)) {
-        @content;
-      }
-    } @else if $direction == min {
-      @media (min-width: $breakpoint-value) {
-        @content;
-      }
+        @if $direction == max {
+            @media (max-width: ($breakpoint-value - 1)) {
+                @content;
+            }
+        } @else if $direction == min {
+            @media (min-width: $breakpoint-value) {
+                @content;
+            }
+        } @else {
+            @media ($direction: $breakpoint-value) {
+                @content;
+            }
+        }
     } @else {
-      @media ($direction: $breakpoint-value) {
-        @content;
-      }
+        @if $direction == max {
+            @media (max-width: $breakpoint) {
+                @content;
+            }
+        } @else if $direction == min {
+            @media (min-width: $breakpoint) {
+                @content;
+            }
+        } @else {
+            @media ($direction: $breakpoint) {
+                @content;
+            }
+        }
     }
-  } @else {
-    @if $direction == max {
-      @media (max-width: $breakpoint) {
-        @content;
-      }
-    } @else if $direction == min {
-      @media (min-width: $breakpoint) {
-        @content;
-      }
-    } @else {
-      @media ($direction: $breakpoint) {
-        @content;
-      }
-    }
-  }
 }

@@ -1,24 +1,22 @@
 .demo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  row-gap: space(4);
-  width: 100%;
-  height: 100vh;
-  padding: space(2);
-  text-align: center;
-  overflow: hidden;;
-
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: space(4);
+    width: 100%;
+    height: 100vh;
+    padding: space(2);
+    text-align: center;
+    overflow: hidden;
 }
 
 .demo__icon {
-  width: 8rem;
-  height: 8rem;
-  color: $color-primary;
+    width: 8rem;
+    height: 8rem;
+    color: $color-primary;
 }
 
 .demo__title {
-  margin: 0;
+    margin: 0;
 }

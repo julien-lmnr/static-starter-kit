@@ -1,19 +1,19 @@
 html {
-  font-size: 62.5%; // ex: 1rem = 10px | 1.6rem = 16px...
-  scroll-behavior: smooth;
+    font-size: 62.5%; // ex: 1rem = 10px | 1.6rem = 16px...
+    scroll-behavior: smooth;
 }
 
 body {
-  position: relative;
-  font-size: $font-size-text;
-  font-family: $font-family-text;
-  font-weight: $font-weight-text;
-  line-height: $font-line-height-text;
-  color: $color-text;
-  background-color: $color-background;
+    position: relative;
+    font-size: $font-size-text;
+    font-family: $font-family-text;
+    font-weight: $font-weight-text;
+    line-height: $font-line-height-text;
+    color: $color-text;
+    background-color: $color-background;
 }
 
 ::selection {
-  color: $color-primary-contrast;
-  background-color: $color-primary;
+    color: $color-primary-contrast;
+    background-color: $color-primary;
 }

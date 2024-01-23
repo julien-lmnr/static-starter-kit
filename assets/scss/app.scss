@@ -1,31 +1,18 @@
 /* stylelint-disable at-rule-empty-line-before */
 @layer external, theme, pages, utilities;
 
-@import
-  "tools/functions",
-  "tools/mixins",
-  "tools/fonts",
-  "tools/variables";
+@import 'tools/functions', 'tools/mixins', 'tools/fonts', 'tools/variables';
 
 @layer theme {
-  @import
-    "reset/sanitize",
-    "reset/sanitize_forms",
-    "reset/sanitize_assets";
-  @import
-    "components/title",
-    "components/icon";
-  @import
-    "layout/base",
-    "layout/grid";
+    @import 'reset/sanitize', 'reset/sanitize_forms', 'reset/sanitize_assets';
+    @import 'components/title', 'components/icon';
+    @import 'layout/base', 'layout/grid';
 }
 
 @layer pages {
-  @import "pages/demo";
+    @import 'pages/demo';
 }
 
 @layer utilities {
-  @import
-    "utilities/spacing",
-    "utilities/visibility";
+    @import 'utilities/spacing', 'utilities/visibility';
 }

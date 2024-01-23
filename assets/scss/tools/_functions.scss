@@ -1,5 +1,5 @@
-@use "sass:string";
-@use "sass:map";
+@use 'sass:string';
+@use 'sass:map';
 
 /**
  * Replaces all occurrences of a character string with another string.
@@ -10,16 +10,17 @@
  *
  * @return {String} - String with replaced occurrences
  */
-@function string-replace($subject, $search, $replace: "") {
-  $index: string.index($subject, $search);
+@function string-replace($subject, $search, $replace: '') {
+    $index: string.index($subject, $search);
 
-  @if $index {
-    @return string.slice($subject, 1, $index - 1) + $replace + string-replace(
-      string.slice($subject, $index + string.length($search)
-    ), $search, $replace);
-  }
+    /* stylelint-disable scss/operator-no-newline-after */
+    @if $index {
+        @return string.slice($subject, 1, $index - 1) + $replace +
+            string-replace(string.slice($subject, $index + string.length($search)), $search, $replace);
+    }
+    /* stylelint-enable scss/operator-no-newline-after */
 
-  @return $subject;
+    @return $subject;
 }
 
 /**
@@ -30,9 +31,9 @@
  * @return {String} - Calculated spacing in rem
  */
 @function space($multiplicand) {
-  $space: calc($multiplicand * $spacing-multiplier / $conversion-divisor-rem);
+    $space: calc($multiplicand * $spacing-multiplier / $conversion-divisor-rem);
 
-  @return #{$space}rem;
+    @return #{$space}rem;
 }
 
 /**
@@ -44,9 +45,9 @@
  * @return {Number|Null} - Minimum breakpoint width or null for smallest breakpoint
  */
 @function breakpoint-min($name, $breakpoints: $breakpoints) {
-  $min: map.get($breakpoints, $name);
+    $min: map.get($breakpoints, $name);
 
-  @return if($min != 0, $min, null);
+    @return if($min != 0, $min, null);
 }
 
 /**
@@ -61,7 +62,7 @@
   * @return {String} - Class name suffix for the given breakpoint
   */
 @function breakpoint-infix($name, $breakpoints: $breakpoints) {
-  @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+    @return if(breakpoint-min($name, $breakpoints) == null, '', '-#{$name}');
 }
 
 /**
@@ -72,5 +73,5 @@
  * @return {String} - Color in RGB notation
  */
 @function hex-to-rgb($hex) {
-  @return red($hex) green($hex) blue($hex);
+    @return red($hex) green($hex) blue($hex);
 }
