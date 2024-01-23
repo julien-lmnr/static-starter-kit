@@ -21,7 +21,7 @@
     "glob": "^9.3.2",
     "parcel": "^2.8.3",
     "parcel-transformer-twig": "link:./parcel/parcel-transformer-twig",
-    "postcss": "^8.1.0",
+    "postcss": "^8.4.31",
     "stylelint": "^15.10.1",
     "stylelint-config-standard-scss": "^7.0.1",
     "stylelint-scss": "^4.5.0",
