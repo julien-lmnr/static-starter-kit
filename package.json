@@ -22,7 +22,7 @@
     "parcel": "^2.8.3",
     "parcel-transformer-twig": "link:./parcel/parcel-transformer-twig",
     "postcss": "^8.1.0",
-    "stylelint": "^15.3.0",
+    "stylelint": "^15.10.1",
     "stylelint-config-standard-scss": "^7.0.1",
     "stylelint-scss": "^4.5.0",
     "twig": "^1.16.0"
