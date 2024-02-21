@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 8
+  version: 6
   cacheKey: 10c0
 
 "@aashutoshrathi/word-wrap@npm:^1.2.3":
@@ -2270,9 +2270,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fsevents@patch:fsevents@npm%3A~2.3.2#optional!builtin<compat/fsevents>":
+"fsevents@patch:fsevents@npm%3A~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#optional!builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
   dependencies:
     node-gyp: "npm:latest"
   conditions: os=darwin
@@ -2573,9 +2573,9 @@ __metadata:
   linkType: hard
 
 "ip@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "ip@npm:2.0.0"
-  checksum: 8d186cc5585f57372847ae29b6eba258c68862055e18a75cc4933327232cb5c107f89800ce29715d542eef2c254fbb68b382e780a7414f9ee7caf60b7a473958
+  version: 2.0.1
+  resolution: "ip@npm:2.0.1"
+  checksum: 8/d765c9fd212b8a99023a4cde6a558a054c298d640fec1020567494d257afd78ca77e37126b1a3ef0e053646ced79a816bf50621d38d5e768cdde0431fa3b0d35
   languageName: node
   linkType: hard
 
@@ -3896,20 +3896,20 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "static-starter-kit@workspace:."
   dependencies:
-    "@hotwired/stimulus": "npm:^3.2.2"
-    "@parcel/plugin": "npm:^2.11.0"
-    "@parcel/transformer-sass": "npm:^2.11.0"
-    autoprefixer: "npm:^10.4.17"
-    eslint: "npm:^8.56.0"
-    glob: "npm:^10.3.10"
-    parcel: "npm:^2.11.0"
+    "@hotwired/stimulus": ^3.2.2
+    "@parcel/plugin": ^2.11.0
+    "@parcel/transformer-sass": ^2.11.0
+    autoprefixer: ^10.4.17
+    eslint: ^8.56.0
+    glob: ^10.3.10
+    parcel: ^2.11.0
     parcel-transformer-twig: "link:./parcel/parcel-transformer-twig"
-    postcss: "npm:^8.4.33"
-    prettier: "npm:^3.2.4"
-    stylelint: "npm:^16.2.0"
-    stylelint-config-standard-scss: "npm:^13.0.0"
-    stylelint-scss: "npm:^6.1.0"
-    twig: "npm:^1.17.1"
+    postcss: ^8.4.33
+    prettier: ^3.2.4
+    stylelint: ^16.2.0
+    stylelint-config-standard-scss: ^13.0.0
+    stylelint-scss: ^6.1.0
+    twig: ^1.17.1
   languageName: unknown
   linkType: soft
 
